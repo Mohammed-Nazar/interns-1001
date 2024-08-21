@@ -1,5 +1,9 @@
 ## To run the project on the browser type the following command in the terminal
 ```
+npm i
+```
+then
+```
 npm run dev
 ```
 
