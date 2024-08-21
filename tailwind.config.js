@@ -8,8 +8,15 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        dark_blue: "#000119",
-        primary_green: "#13CB5C"
+        NavyN900: "#000119",
+        Green: "#13CB5C",
+        NavyN600: "#2E2F42"
+      },
+      spacing: {
+        '26px': '26.06px',
+        '29.9px': '29.9px',
+        '36.4px': '36.4px',
+        '120px': '120px'
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
