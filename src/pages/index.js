@@ -1,9 +1,9 @@
-import Image from "next/image";
+// main route
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <h1 className="text-6xl text-green-800 font-bold" >Hello World 👋</h1>
-    </div>
+    <>
+     <h1 className="h-538px">hello</h1>
+    </>
   );
 }
