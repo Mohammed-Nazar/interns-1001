@@ -71,7 +71,7 @@ const Header = () => {
         </ul>
       </div>
 
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-1 md:space-x-4">
         <button>
           <IoSearch className="text-white w-5 h-5" />
         </button>
