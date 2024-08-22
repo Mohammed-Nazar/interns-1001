@@ -15,7 +15,7 @@ const LanguageButton = () => {
     <div className="relative inline-block text-left">
       <button
         type="button"
-        className="flex flex-row w-full justify-between gap-1 items-center rounded-md border bg-NavyN600 px-3 py-2 text-sm font-semibold text-white hover:bg-NavyN700"
+        className="flex flex-row w-full justify-between gap-1 items-center rounded-md  px-3 py-2 text-sm font-semibold text-white"
         onClick={toggleDropdown}
       >
         {selectedLanguage}
@@ -23,18 +23,18 @@ const LanguageButton = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-1 w-full origin-top-right rounded-md bg-NavyN600 shadow-lg">
+        <div className="absolute right-0 mt-1 w-full origin-top-right rounded-md bg-NavyN900 shadow-lg">
           <div className="p-1">
             <button
               type="button"
-              className="block w-full px-4 py-2 text-sm text-white hover:bg-NavyN700"
+              className="block w-full px-4 py-2 text-sm text-white"
               onClick={() => selectLanguage("English")}
             >
               English
             </button>
             <button
               type="button"
-              className="block w-full px-4 py-2 text-sm text-white hover:bg-NavyN700"
+              className="block w-full px-4 py-2 text-sm text-white"
               onClick={() => selectLanguage("Arabic")}
             >
               Arabic
