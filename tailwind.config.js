@@ -11,7 +11,8 @@ module.exports = {
         NavyN900: "#000119",
         Green: "#13CB5C",
         NavyN600: "#2E2F42",
-        NavyN70: "#A3A4AC"
+        NavyN70: "#A3A4AC",
+        NavyN50: "#BFC0C6"
       },
       spacing: {
         '26px': '26.06px',
