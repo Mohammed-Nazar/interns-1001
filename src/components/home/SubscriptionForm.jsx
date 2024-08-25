@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useRouter } from "next/router"
+import Button from "../button/Button"
 
 const SubscriptionForm = () => {
   const [selectedPlan, setSelectedPlan] = useState("")
@@ -115,12 +116,7 @@ const SubscriptionForm = () => {
       </fieldset>
 
       {/* Continue Button */}
-      <button
-        type="submit"
-        className="w-full bg-Green text-NavyN900 font-semibold py-3 rounded-xl hover:bg-opacity-90 transition"
-      >
-        Continue
-      </button>
+      <Button title="Continue" />
     </form>
   )
 }

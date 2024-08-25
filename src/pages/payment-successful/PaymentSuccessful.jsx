@@ -1,6 +1,13 @@
 import React from "react"
+import { useRouter } from "next/router";
+import Button from "@/components/button/Button";
 
 const PaymentSuccessful = () => {
+    const router = useRouter();
+  
+    const handleStartWatching = () => {
+      router.push("/");
+    };
   return (
     <>
     <div className="flex flex-col items-center justify-center w-full md:w-538px min-h-screen px-6 py-12 md:py-0 mx-auto">
@@ -31,13 +38,7 @@ const PaymentSuccessful = () => {
         </div>
       </div>
       <div className="w-full px-10">
-      <button
-        onClick={() => (window.location.href = "/")}
-        type="submit"
-        className="w-full bg-Green text-NavyN900 font-semibold py-3  rounded-xl hover:bg-opacity-90 transition"
-      >
-        Start Watching
-      </button>
+        <Button title=" Start Watching" onClick={handleStartWatching}/>
       </div>
       
     </div>

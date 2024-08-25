@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { FaTimesCircle } from "react-icons/fa"
 import { CiCreditCard2 } from "react-icons/ci"
 import { useRouter } from "next/router"
+import Button from "../button/Button"
 
 const VoucherPaymentForm = () => {
   const router = useRouter()
@@ -90,12 +91,7 @@ const VoucherPaymentForm = () => {
             <p className="text-red-500 text-sm mt-1">{errors.cardNumber}</p>
           )}
         </div>
-        <button
-          type="submit"
-          className="w-full py-3 mt-4 text-center text-white bg-NavyN600 rounded-lg opacity-50"
-        >
-          Redeem & Subscribe
-        </button>
+        <Button title="Redeem & Subscribe"/>
       </form>
     </>
   )
