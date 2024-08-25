@@ -8,11 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        NavyN900: "#000119",
         Green: "#13CB5C",
+        NavyN900: "#000119",
+        NavyN800: "#0D0E25",
+        NavyN750: "#15162D",
         NavyN600: "#2E2F42",
+        NavyN500: "#3B3B4E",
+        NavyN300: "#575767",
+        NavyN80: "#94949E",
         NavyN70: "#A3A4AC",
-        NavyN50: "#BFC0C6"
+        NavyN50: "#BFC0C6",
       },
       spacing: {
         '26px': '26.06px',
@@ -21,10 +26,11 @@ module.exports = {
         '154px': '154.06px'
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'image': "url('/assets/background_image.png')"
       },
+      fontFamily: {
+        'inter': ['Inter', 'sans']
+      }
     },
   },
   plugins: [],
