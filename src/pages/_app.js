@@ -7,7 +7,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow bg-image bg-cover bg-center">
         <Component {...pageProps} />
       </main>
       <Footer />
