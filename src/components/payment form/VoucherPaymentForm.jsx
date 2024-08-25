@@ -1,9 +1,14 @@
 import React, { useState } from "react"
 import { FaTimesCircle } from "react-icons/fa"
 import { CiCreditCard2 } from "react-icons/ci"
+import { useRouter } from "next/router"
 
 const VoucherPaymentForm = () => {
+  const router = useRouter()
   const [cardNumber, setCardNumber] = useState("")
+  const [errors, setErrors] = useState({
+    cardNumber: "",
+  })
 
   const formatCardNumber = (value) => {
     const cleaned = value.replace(/\D/g, "") // Remove all non-digit characters
@@ -11,15 +16,39 @@ const VoucherPaymentForm = () => {
     return formatted
   }
 
+  const validateCardNumber = (number) => {
+    const cleaned = number.replace(/\D/g, "")
+    if (cleaned.length < 16) {
+      return "Card number is incomplete."
+    }
+    if (!/^\d{16}$/.test(cleaned)) {
+      return "Your card number is invalid."
+    }
+    return ""
+  }
+
   const handleCardNumberChange = (e) => {
-    setCardNumber(formatCardNumber(e.target.value))
+    const value = e.target.value.replace(/\s+/g, "")
+    if (/^\d{0,16}$/.test(value)) {
+      setCardNumber(formatCardNumber(value))
+      setErrors({ ...errors, cardNumber: validateCardNumber(value) })
+    }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Handle the payment submission logic here
-    console.log("Payment submitted")
+    const allErrors = Object.values(errors).every((err) => err === "")
+
+    if (allErrors) {
+      console.log("Payment submitted")
+
+      // Navigate to the success page
+      router.push("/payment-successful/PaymentSuccessful")
+    } else {
+      console.log("Please fix the errors before proceeding.")
+    }
   }
+
   return (
     <>
       <form onSubmit={handleSubmit} className="w-full px-0 md:px-10">
@@ -41,7 +70,11 @@ const VoucherPaymentForm = () => {
               placeholder="xxxx-xxxx-xxxx-xxxx"
               value={cardNumber}
               onChange={handleCardNumberChange}
-              className="w-full pl-8 p-2 text-white bg-NavyN600 border border-NavyN300 focus:outline-none focus:bg-NavyN750 focus:border-Green rounded-lg"
+              className={`w-full pl-8 p-2 text-white bg-NavyN600 border ${
+                errors.cardNumber
+                  ? "border-red-500 focus:border-red-500"
+                  : "border-NavyN300 focus:border-Green"
+              } focus:outline-none focus:bg-NavyN750 rounded-lg`}
             />
             {cardNumber && (
               <button
@@ -53,6 +86,9 @@ const VoucherPaymentForm = () => {
               </button>
             )}
           </div>
+          {errors.cardNumber && (
+            <p className="text-red-500 text-sm mt-1">{errors.cardNumber}</p>
+          )}
         </div>
         <button
           type="submit"
