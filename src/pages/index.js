@@ -1,9 +1,11 @@
 // main route
 
+import SubscriptionLandingPage from "@/components/home/SubscriptionLandingPage";
+
 export default function Home() {
   return (
     <>
-     <h1 className="h-538px">hello</h1>
+     <SubscriptionLandingPage/>
     </>
   );
 }
