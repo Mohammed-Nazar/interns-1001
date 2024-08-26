@@ -27,7 +27,7 @@ const MobileNav = ({
         <div className="justify-self-start">
           <button onClick={toggleMenu}>
             <Image
-              src="burger-menu.svg"
+              src="/burger-menu.svg"
               width={30}
               height={20}
               alt="burger-menu"
@@ -36,7 +36,7 @@ const MobileNav = ({
         </div>
         <div>
           <Link href="/">
-            <Image src="LogoGreen.svg" width={60} height={60} alt="Logo" />
+            <Image src="1001/LogoGreen.svg" width={60} height={60} alt="Logo" />
           </Link>
         </div>
         <div className="justify-self-end">
@@ -56,11 +56,11 @@ const MobileNav = ({
       >
         <div className="flex justify-between px-4 py-2">
           <Link href="/">
-            <Image src="LogoGreen.svg" width={60} height={60} alt="Logo" />
+            <Image src="1001/LogoGreen.svg" width={60} height={60} alt="Logo" />
           </Link>
           <button onClick={toggleMenu}>
             <Image
-              src="close-icon.svg"
+              src="/close-icon.svg"
               width={30}
               height={30}
               alt="close-menu"

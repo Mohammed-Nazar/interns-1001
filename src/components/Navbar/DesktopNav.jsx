@@ -19,7 +19,7 @@ const DesktopNav = ({
       <div>
         <div className="flex gap-14 items-center">
           <Link href="/">
-            <Image src="LogoGreen.svg" width={80} height={80} alt="Logo" />
+            <Image src="1001/LogoGreen.svg" width={80} height={80} alt="Logo" />
           </Link>
           <ul className="text-white font-ar-500 text-2xl flex gap-12">
             {items.map((i) => (
