@@ -8,10 +8,26 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        "subscription-gradient": "url('/BG.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      backgroundColor:{
+        "primary": "#13CB5C",
+        "navy-600": "#2E2F42",
+        "navy-900": "#000119",
+      },
+      colors: {
+        "navy-400": "#4A4B5C",
+        "primary": "#13CB5C",
+        "navy-70": "#bfc0c6",
+        "navy-900": "#000119",
+        "navy-800": "#0D0E25"
+      },
+      borderColor: {
+        "navy-300": "#575767"
+      }
     },
   },
   plugins: [],
