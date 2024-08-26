@@ -12,16 +12,16 @@ const DesktopNav = ({
   return (
     <nav
       dir="rtl"
-      className={`hidden md:flex px-10 py-6 sticky z-50 top-0 transition-colors duration-300 flex-row justify-between items-center ${
+      className={`hidden md:flex px-12 py-5 sticky z-50 top-0 transition-colors duration-300 flex-row justify-between items-center ${
         isScrolled ? "bg-navy-900/80" : "bg-navy-900"
       }`}
     >
       <div>
         <div className="flex gap-14 items-center">
           <Link href="/">
-            <Image src="LogoGreen.svg" width={60} height={60} alt="Logo" />
+            <Image src="LogoGreen.svg" width={80} height={80} alt="Logo" />
           </Link>
-          <ul className="text-white font-ar-500 text-lg flex gap-8">
+          <ul className="text-white font-ar-500 text-2xl flex gap-12">
             {items.map((i) => (
               <li key={i.text}>
                 <Link
