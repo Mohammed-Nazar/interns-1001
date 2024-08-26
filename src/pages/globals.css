@@ -29,3 +29,14 @@
     font-weight: 400;
     font-style: normal;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #000119;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #13CB5C;
+}
+
+
