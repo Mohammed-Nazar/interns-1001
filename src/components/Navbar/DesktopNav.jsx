@@ -80,8 +80,8 @@ const DesktopNav = ({
           </li>
           <li>
             <Link href="/login">
-              <span className="bg-primary px-3 py-2 rounded-xl text-navy-800 font-ar-500">
-                تسجيل الدخول
+              <span className="bg-primary px-4 py-3 rounded-xl text-navy-800 font-ar-500">
+              الدخول
               </span>
             </Link>
           </li>

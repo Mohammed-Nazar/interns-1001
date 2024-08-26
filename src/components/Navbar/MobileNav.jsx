@@ -1,7 +1,7 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+"use client"
+import React, { useState } from "react"
+import Link from "next/link"
+import Image from "next/image"
 
 const MobileNav = ({
   items,
@@ -10,11 +10,11 @@ const MobileNav = ({
   toggleDropdown,
   isDropdownOpen,
 }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   return (
     <>
@@ -41,9 +41,9 @@ const MobileNav = ({
         </div>
         <div className="justify-self-end">
           <Link href="/login">
-            <span className="bg-primary px-2 text-sm py-1 rounded-xl text-navy-800 font-ar-500">
-              تسجيل الدخول
-            </span>
+          <span className="bg-primary px-4 py-2 rounded-xl text-navy-800 font-ar-500">
+                الدخول
+              </span>
           </Link>
         </div>
       </nav>
@@ -114,15 +114,15 @@ const MobileNav = ({
           </li>
           <li>
             <Link href="/login">
-              <span className="bg-primary px-3 py-2 rounded-xl text-navy-800 font-ar-500">
-                تسجيل الدخول
+              <span className="bg-primary px-4 py-3 rounded-xl text-navy-800 font-ar-500">
+                الدخول
               </span>
             </Link>
           </li>
         </ul>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default MobileNav;
+export default MobileNav
