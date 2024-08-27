@@ -11,7 +11,7 @@ const Footer = () => {
     <footer dir="rtl" className="bg-navy-900 px-20 py-14 ">
       <div className="flex flex-col md:flex-row md:justify-between md:grid-cols-2 pb-5 mb-5 border-b-[2px] border-navy-800">
         <div className="text-navy-70 flex flex-col gap-6 col-span-1 w-fit">
-          <Image src="1001/LogoGreen.svg" width={60} height={60} />
+          <Image src="/LogoGreen.svg" width={60} height={60} />
           <div className="flex flex-col w-fit mb-2">
             <span>support@1001.tv</span>
             <span dir="ltr">+964(780)133-3323</span>

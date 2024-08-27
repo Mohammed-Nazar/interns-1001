@@ -39,7 +39,7 @@ const RedeemVoucher = () => {
       <section className="md:order-last relative  mt-10 md:mt-5 z-0">
         <Image
           draggable={false}
-          src="1001/Voucher-Presentation.svg"
+          src="/Voucher-Presentation.svg"
           alt="Voucher Presentation"
           width={100}
           height={100}
@@ -51,7 +51,7 @@ const RedeemVoucher = () => {
           <div className="flex flex-col items-center w-fit">
             <Image
               draggable={false}
-              src="1001/Premium.svg"
+              src="/Premium.svg"
               alt="Premium image"
               className="w-3.5"
               width={100}
@@ -59,7 +59,7 @@ const RedeemVoucher = () => {
             />
             <Image
               draggable={false}
-              src="1001/Logo.svg"
+              src="/Logo.svg"
               alt="1001 Logo"
               className="w-14"
               width={100}
