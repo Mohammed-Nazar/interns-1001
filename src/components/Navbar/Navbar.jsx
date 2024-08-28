@@ -1,10 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
+import { UserContext } from "../Context/UserContext";
 
 const Navbar = () => {
+  const {user, setUser} = useContext(UserContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();
@@ -53,8 +55,8 @@ const Navbar = () => {
 
   return (
     <>
-      <MobileNav items={items} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} isScrolled={isScrolled}  router={router} />
-      <DesktopNav items={items} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} isScrolled={isScrolled}  router={router} />
+      <MobileNav  user={user}  items={items} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} isScrolled={isScrolled}  router={router} />
+      <DesktopNav user={user} items={items} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} isScrolled={isScrolled}  router={router} />
     </>
   );
 };

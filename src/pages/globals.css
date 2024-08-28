@@ -39,4 +39,11 @@
     background-color: #13CB5C;
 }
 
-
+.blur-effect {
+    filter: blur(4px);
+  }
+  
+  .no-scroll {
+    overflow: hidden;
+  }
+  

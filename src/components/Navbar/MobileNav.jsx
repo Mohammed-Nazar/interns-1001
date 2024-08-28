@@ -2,6 +2,7 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { FaUser } from "react-icons/fa"
 
 const MobileNav = ({
   items,
@@ -9,6 +10,7 @@ const MobileNav = ({
   router,
   toggleDropdown,
   isDropdownOpen,
+  user,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -40,11 +42,19 @@ const MobileNav = ({
           </Link>
         </div>
         <div className="justify-self-end">
-          <Link href="/login">
-          <span className="bg-primary px-4 py-2 rounded-xl text-navy-800 font-ar-500">
+          {user ? (
+            <Link href="/profile">
+              <div className=" text-primary p-2 rounded-full bg-navy-600">
+                <FaUser />
+              </div>
+            </Link>
+          ) : (
+            <Link href="/login">
+              <div className="bg-primary px-4 py-2 rounded-xl text-navy-800 font-ar-500">
                 الدخول
-              </span>
-          </Link>
+              </div>
+            </Link>
+          )}
         </div>
       </nav>
 
@@ -111,13 +121,6 @@ const MobileNav = ({
                 <a href="/en">English</a>
               </li>
             </ul>
-          </li>
-          <li>
-            <Link href="/login">
-              <span className="bg-primary px-4 py-3 rounded-xl text-navy-800 font-ar-500">
-                الدخول
-              </span>
-            </Link>
           </li>
         </ul>
       </div>

@@ -1,6 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { FaUser } from "react-icons/fa"
 
 const DesktopNav = ({
   items,
@@ -8,6 +9,7 @@ const DesktopNav = ({
   router,
   toggleDropdown,
   isDropdownOpen,
+  user,
 }) => {
   return (
     <nav
@@ -79,16 +81,22 @@ const DesktopNav = ({
             </ul>
           </li>
           <li>
-            <Link href="/login">
-              <span className="bg-primary px-4 py-3 rounded-xl text-navy-800 font-ar-500">
-              الدخول
-              </span>
-            </Link>
+            {user ? (
+              <div className="text-primary p-2 rounded-full bg-navy-600 text-2xl">
+                <FaUser />
+              </div>
+            ) : (
+              <Link href="/login">
+                <span className="bg-primary px-4 py-3 rounded-xl text-navy-800 font-ar-500">
+                  الدخول
+                </span>
+              </Link>
+            )}
           </li>
         </ul>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default DesktopNav;
+export default DesktopNav
