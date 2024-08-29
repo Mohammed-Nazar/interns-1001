@@ -3,7 +3,7 @@ import SubscriptionAgreementNotice from "@/components/subscription agreement not
 import Link from "next/link"
 import React from "react"
 
-const Yearly = () => {
+const index = () => {
   return (
     <>
       <div className="flex flex-col items-start md:items-center w-full md:w-538px min-h-screen px-6 py-12 mx-auto">
@@ -19,11 +19,10 @@ const Yearly = () => {
         <div className="flex items-center justify-between h-20 p-4 mt-4 bg-NavyN600 rounded-xl border border-NavyN300 shadow-xl">
           <div className="flex flex-col">
             <p className="text-white text-sm font-semibold">
-              Yearly
-              <span className="text-Green line-through mx-2">$95.99</span>
+              Monthly
             </p>
             <p className="text-white text-sm font-bold">
-              $79.99<span className="text-NavyN80 font-normal">/Year</span>
+            $7.99<span className="text-NavyN80 font-normal">/Month</span>
               <span className="text-NavyN500 text-sm ml-2"> • (7.99/Mo)</span>
             </p>
           </div>
@@ -32,7 +31,6 @@ const Yearly = () => {
           </Link>
         </div>
         </div>
-
         <YearlyAndMonthlyPaymentForm />
         <SubscriptionAgreementNotice />
       </div>
@@ -40,4 +38,4 @@ const Yearly = () => {
   )
 }
 
-export default Yearly
+export default index
