@@ -11,6 +11,7 @@ const VpnAdBlocker = () => {
         height={100}
         width={100}
         className="w-11/12 absolute z-0 blur-[2px] md:w-5/12"
+        alt="BlurredBrokenTv"
       />
 
       <div className="flex justify-center items-center z-20 flex-col mx-10 md:mb-10">
