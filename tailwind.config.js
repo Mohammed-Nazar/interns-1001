@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "subscription-gradient": "url('/BG.png')",
+        main: "url('/main-bg.svg')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
