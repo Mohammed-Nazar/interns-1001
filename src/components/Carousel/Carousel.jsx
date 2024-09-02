@@ -1,45 +1,120 @@
-"use client"
-import React, { useCallback, useEffect, useState } from "react"
+import { useRef, useState } from "react"
 import MovieCard from "../MovieCard/MovieCard"
-import useEmblaCarousel from "embla-carousel-react"
 
-const Carousel = ({ title, popularMoviesData }) => {
-  const [emblaRef, embla] = useEmblaCarousel({
-    align: "start",
-    inViewThreshold: 0.2,
-  })
+const Carousel = ({ title, data, isHero }) => {
+  const carouselRef = useRef(null)
+  const [isDragging, setIsDragging] = useState(false)
+  const [startX, setStartX] = useState(0)
+  const [scrollLeftStart, setScrollLeftStart] = useState(0)
+  const [scrollInterval, setScrollInterval] = useState(null)
+  const [carouselButtons, setCarouselButtons] = useState("hidden")
 
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const [scrollSnaps, setScrollSnaps] = useState([])
+  const isFree = false
+  const scrollAmount = 200
+  const intervalTime = 1000
 
-  const scrollTo = useCallback(
-    (index) => embla && embla.scrollTo(index),
-    [embla],
-  )
+  const scrollLeft = () => {
+    carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" })
+  }
 
-  const onSelect = useCallback(() => {
-    if (!embla) return
-    setSelectedIndex(embla.selectedScrollSnap())
-  }, [embla, setSelectedIndex])
+  const scrollRight = () => {
+    carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" })
+  }
 
-  useEffect(() => {
-    if (!embla) return
-    onSelect()
-    setScrollSnaps(embla.scrollSnapList())
-    embla.on("select", onSelect)
-  }, [embla, setScrollSnaps, onSelect])
+  const startScrollingLeft = () => {
+    setScrollInterval(
+      setInterval(() => {
+        scrollLeft()
+      }, intervalTime),
+    )
+  }
+
+  const startScrollingRight = () => {
+    setScrollInterval(
+      setInterval(() => {
+        scrollRight()
+      }, intervalTime),
+    )
+  }
+
+  const stopScrolling = () => {
+    clearInterval(scrollInterval)
+    setScrollInterval(null)
+  }
+
+  const setCarouselButtonVisible = () => {
+    setCarouselButtons("visible")
+  }
+
+  const setCarouselButtonHidden = () => {
+    setCarouselButtons("hidden")
+  }
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true)
+    setStartX(e.pageX - carouselRef.current.offsetLeft)
+    setScrollLeftStart(carouselRef.current.scrollLeft)
+  }
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return
+    e.preventDefault()
+    const x = e.pageX - carouselRef.current.offsetLeft
+    const walk = x - startX
+    carouselRef.current.scrollLeft = scrollLeftStart - walk
+  }
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+  }
+
+  const handleMouseLeave = () => {
+    setIsDragging(false)
+  }
 
   return (
-    <div dir="rtl">
-      <h1 className="text-white text-xl mb-4">{title}</h1>
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {popularMoviesData.results.slice(0, 6).map((movie) => (
-            <div key={movie.id} className="flex-shrink-0 w-full">
-              <MovieCard movie={movie} />
-            </div>
+    <div
+      onMouseEnter={setCarouselButtonVisible}
+      onMouseLeave={setCarouselButtonHidden}
+      className="flex flex-col"
+    >
+      {!isHero && (
+        <div>
+          <h1 className="text-white p-2 text-xl">{title}</h1>
+        </div>
+      )}
+      <div className="relative flex items-center w-full overflow-hidden scrollbar-hide">
+        <button
+          onMouseEnter={startScrollingLeft}
+          onMouseLeave={stopScrolling}
+          className={`absolute left-0 z-10 p-2 text-white transform bg-transparent cursor-pointer top-1/2 -translate-y-1/2 ${carouselButtons}`}
+        >
+          &#10095;
+        </button>
+        <div
+          className="flex overflow-x-scroll gap-x-1 scroll-smooth scrollbar-hide"
+          ref={carouselRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+        >
+          {data.results.map((movie, index) => (
+            <MovieCard
+              key={index}
+              movie={movie}
+              isFree={isFree}
+              className="flex-shrink-0 w-36 m-2 transition-transform transform duration-300 ease-in-out"
+            />
           ))}
         </div>
+        <button
+          onMouseEnter={startScrollingRight}
+          onMouseLeave={stopScrolling}
+          className="absolute right-0 z-10 p-2 text-white bg-transparent cursor-pointer top-1/2 -translate-y-1/2"
+        >
+          &#10094;
+        </button>
       </div>
     </div>
   )

@@ -1,10 +1,7 @@
 import Link from "next/link"
 import React from "react"
+import Carousel from "../Carousel/Carousel"
 import MovieCard from "../MovieCard/MovieCard"
-import dynamic from "next/dynamic"
-const Carousel = dynamic(() => import("../Carousel/Carousel"), {
-  ssr: false,
-})
 
 const HomePage = ({ popularMoviesData }) => {
   const isFree = false
@@ -21,14 +18,12 @@ const HomePage = ({ popularMoviesData }) => {
             </button>
           </Link>
         </div>
-        <div className="flex gap-1">
-          {popularMoviesData.results.slice(0, 4).map((movie) => (
-            <MovieCard movie={movie} isFree={isFree} />
-          ))}
+        <div className=" w-64">
+          <Carousel isHero={true} data={popularMoviesData} />
         </div>
       </section>
       <section className="bg-navy-900">
-        <Carousel title="الاكثر مشاهدة" popularMoviesData={popularMoviesData} />
+        <Carousel title="الاكثر مشاهدة" data={popularMoviesData} />
       </section>
     </main>
   )
