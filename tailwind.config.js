@@ -35,9 +35,10 @@ module.exports = {
       },
       backgroundImage: {
         "subscription-gradient": "url('/BG.png')",
+        main: "url('/main-bg.svg')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        'image': "url('/assets/background_image.png')"
+        'image': "url('/assets/background_image.png')",
       },
       backgroundColor: {
         "primary": "#13CB5C",
