@@ -23,7 +23,9 @@ module.exports = {
         "navy-800": "#0D0E25",
         "navy-50": "#BFC0C6",
         "navy-100": "#757683",
-        primary: "#13CB5C",
+        "primary": "#13CB5C",
+        "navy-600": "#2E2F42",
+        "navy-700": "#1C1D32",
       },
       spacing: {
         '26px': '26.06px',
@@ -39,7 +41,7 @@ module.exports = {
         'image': "url('/assets/background_image.png')",
       },
       backgroundColor: {
-        primary: "#13CB5C",
+        "primary": "#13CB5C",
         "navy-600": "#2E2F42",
         "navy-900": "#000119",
         "navy-700": "#1C1D32",

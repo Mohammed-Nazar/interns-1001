@@ -1,16 +1,17 @@
-// layout component
-import "./globals.css";
-import Header from "@/components/header/Header";
-import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/Navbar/Navbar"
+import "./globals.css"
+import Footer from "@/components/Footer/Footer"
+import { UserProvider } from "@/components/Context/UserContext"
+
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Header />
-      <main className="flex-grow bg-image bg-cover bg-center">
+      <UserProvider>
+        <Navbar />
         <Component {...pageProps} />
-      </main>
-      <Footer />
+        <Footer />
+      </UserProvider>
     </>
-  );
+  )
 }
