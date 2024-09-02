@@ -3,6 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.inter-600 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 /* Hide the native radio input */
 .subscription-options input[type="radio"] {
     appearance: none;

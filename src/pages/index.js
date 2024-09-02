@@ -1,4 +1,3 @@
-// main route
 
 import SubscriptionLandingPage from "@/components/home/SubscriptionLandingPage";
 
