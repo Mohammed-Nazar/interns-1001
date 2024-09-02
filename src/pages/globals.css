@@ -1,4 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Hide the native radio input */
+.subscription-options input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #555; /* Unselected border color */
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    margin-left: 10px;
+}
+
+/* Style for the checked state */
+.subscription-options input[type="radio"]:checked {
+    border:6px solid #13CB5C; /* Green border when selected */
+}
+
+/* The dot inside the radio button */
+.subscription-options input[type="radio"]:checked::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #0D0E25;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
