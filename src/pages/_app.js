@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar"
 import "./globals.css"
-import Footer from "@/components/Footer/Footer"
+import Footer from "@/components/footer/Footer"
 import { UserProvider } from "@/components/Context/UserContext"
 
 
