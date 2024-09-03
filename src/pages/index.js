@@ -1,3 +1,4 @@
+
 import HomePage from "@/components/HomePage/HomePage"
 import { popularMovies } from "@/API/mainApi"
 
