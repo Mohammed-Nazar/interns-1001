@@ -4,12 +4,13 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Fonts */
 .font-ar-600 {
     font-family: "Readex Pro", sans-serif;
     font-optical-sizing: auto;
@@ -20,7 +21,7 @@
 .font-ar-500 {
     font-family: "Readex Pro", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -31,6 +32,14 @@
     font-style: normal;
 }
 
+.inter-600 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
     background-color: #000119;
@@ -40,23 +49,16 @@
     background-color: #13CB5C;
 }
 
+/* Blur Effect */
 .blur-effect {
     filter: blur(4px);
-  }
-  
-  .no-scroll {
-    overflow: hidden;
-  }
-
-
-.inter-600 {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
 }
 
-/* Hide the native radio input */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Custom Radio Buttons */
 .subscription-options input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
@@ -72,12 +74,10 @@
     margin-left: 10px;
 }
 
-/* Style for the checked state */
 .subscription-options input[type="radio"]:checked {
-    border:6px solid #13CB5C; /* Green border when selected */
+    border: 6px solid #13CB5C; /* Green border when selected */
 }
 
-/* The dot inside the radio button */
 .subscription-options input[type="radio"]:checked::before {
     content: "";
     display: block;
@@ -88,4 +88,23 @@
     position: absolute;
     top: 0px;
     left: 0px;
+}
+
+/* Background and Scrollbar */
+.home-section-bg {
+    background: rgb(5, 152, 63);
+    background: linear-gradient(
+        90deg,
+        rgba(5, 152, 63, 1) 0%,
+        rgba(2, 0, 36, 1) 100%,
+        rgba(2, 0, 36, 1) 100%
+    );
+}
+
+.scrollbar-hide {
+    scrollbar-width: none; /* For Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
 }

@@ -35,7 +35,7 @@ module.exports = {
       },
       backgroundImage: {
         "subscription-gradient": "url('/BG.png')",
-        main: "url('/main-bg.svg')",
+        main: "url('/main-bg.svg')", // Kept from the 'develop' branch
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         'image': "url('/assets/background_image.png')",
@@ -51,8 +51,8 @@ module.exports = {
         "navy-700": "#1C1D32",
       },
       fontFamily: {
-        'inter': ['Inter', 'sans']
-      }
+        'inter': ['Inter', 'sans'], // Added from 'develop' branch
+      },
     },
   },
   plugins: [],
