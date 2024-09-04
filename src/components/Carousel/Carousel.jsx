@@ -1,17 +1,16 @@
 import { useRef, useState } from "react"
 import MovieCard from "../MovieCard/MovieCard"
 
-const Carousel = ({ title, data, isHero }) => {
+const Carousel = ({ title, data, isHero, isFree }) => {
   const carouselRef = useRef(null)
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollLeftStart, setScrollLeftStart] = useState(0)
   const [scrollInterval, setScrollInterval] = useState(null)
-  const [carouselButtons, setCarouselButtons] = useState("hidden")
+  const [carouselButtons, setCarouselButtons] = useState("opacity-0")
 
-  const isFree = false
-  const scrollAmount = 200
-  const intervalTime = 1000
+  const scrollAmount = 250
+  const intervalTime = 700
 
   const scrollLeft = () => {
     carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" })
@@ -43,11 +42,11 @@ const Carousel = ({ title, data, isHero }) => {
   }
 
   const setCarouselButtonVisible = () => {
-    setCarouselButtons("visible")
+    setCarouselButtons("opacity-100")
   }
 
   const setCarouselButtonHidden = () => {
-    setCarouselButtons("hidden")
+    setCarouselButtons("opacity-0")
   }
 
   const handleMouseDown = (e) => {
@@ -76,18 +75,22 @@ const Carousel = ({ title, data, isHero }) => {
     <div
       onMouseEnter={setCarouselButtonVisible}
       onMouseLeave={setCarouselButtonHidden}
-      className="flex flex-col"
+      className="flex flex-col relative pt-8"
     >
       {!isHero && (
-        <div>
-          <h1 className="text-white p-2 text-xl">{title}</h1>
+        <div className="flex justify-between items-center mx-4">
+          <h1 className="text-white mb-6 text-lg font-ar-600 w-fit md:text-3xl">
+            {title}
+          </h1>
         </div>
       )}
+
       <div className="relative flex items-center w-full overflow-hidden scrollbar-hide">
         <button
           onMouseEnter={startScrollingLeft}
           onMouseLeave={stopScrolling}
-          className={`absolute left-0 z-10 p-2 text-white transform bg-transparent cursor-pointer top-1/2 -translate-y-1/2 ${carouselButtons}`}
+          onClick={scrollLeft}
+          className={`absolute left-0 z-10 p-2 text-white transform bg-transparent cursor-pointer top-1/2 -translate-y-1/2 text-3xl transition-opacity duration-300 ease-in-out ${carouselButtons}`}
         >
           &#10095;
         </button>
@@ -111,7 +114,8 @@ const Carousel = ({ title, data, isHero }) => {
         <button
           onMouseEnter={startScrollingRight}
           onMouseLeave={stopScrolling}
-          className="absolute right-0 z-10 p-2 text-white bg-transparent cursor-pointer top-1/2 -translate-y-1/2"
+          onClick={scrollRight}
+          className={`absolute right-0 z-10 p-2 text-white bg-transparent cursor-pointer top-1/2 -translate-y-1/2 text-3xl transition-opacity duration-300 ease-in-out ${carouselButtons}`}
         >
           &#10094;
         </button>

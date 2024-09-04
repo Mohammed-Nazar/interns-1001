@@ -1,10 +1,9 @@
 "use client"
-import Image from "next/image";
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa";
-
+import Image from "next/image"
+import { FaInstagram } from "react-icons/fa"
+import { FaFacebook } from "react-icons/fa"
+import { FaYoutube } from "react-icons/fa"
+import { FaTiktok } from "react-icons/fa"
 
 const Footer = () => {
   return (
@@ -17,10 +16,18 @@ const Footer = () => {
             <span dir="ltr">+964(780)133-3323</span>
           </div>
           <ul className="flex gap-8 text-2xl text-primary">
-            <li className="cursor-pointer"><FaFacebook/></li>
-            <li className="cursor-pointer"><FaTiktok/></li>
-            <li className="cursor-pointer"><FaInstagram/></li>
-            <li className="cursor-pointer"><FaYoutube/></li>
+            <li className="cursor-pointer">
+              <FaFacebook />
+            </li>
+            <li className="cursor-pointer">
+              <FaTiktok />
+            </li>
+            <li className="cursor-pointer">
+              <FaInstagram />
+            </li>
+            <li className="cursor-pointer">
+              <FaYoutube />
+            </li>
           </ul>
         </div>
         <div className="my-5 flex flex-col gap-2 md:flex-row md:gap-20">
