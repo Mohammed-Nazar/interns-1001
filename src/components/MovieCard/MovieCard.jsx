@@ -7,9 +7,9 @@ const MovieCard = ({ movie, isFree }) => {
     <div className="relative w-fit">
       <Image
         src={src + movie.poster_path}
-        width={100}
-        height={100}
-        className="min-w-20 max-w-20 rounded-md"
+        width={1000}
+        height={1000}
+        className="min-w-32 max-w-32 md:min-w-60 md:max-w-60 rounded-md max-h-80"
         alt="movie image"
         draggable={false}
       />
@@ -18,10 +18,15 @@ const MovieCard = ({ movie, isFree }) => {
           src="/Premium.svg"
           width={14}
           height={14}
-          className="absolute top-[4px] left-1"
+          className="absolute top-[4px] right-1"
           alt="premium"
           draggable={false}
         />
+      )}
+      {isFree && (
+        <span className="absolute top-[4px] right-1 text-primary text-sm">
+          مجاناً
+        </span>
       )}
     </div>
   )
