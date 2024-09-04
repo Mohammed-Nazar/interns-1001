@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import MovieCard from "../MovieCard/MovieCard"
+import { RiArrowRightWideLine,RiArrowLeftWideLine } from "react-icons/ri";
 
 const Carousel = ({ title, data, isHero, isFree }) => {
   const carouselRef = useRef(null)
@@ -90,9 +91,9 @@ const Carousel = ({ title, data, isHero, isFree }) => {
           onMouseEnter={startScrollingLeft}
           onMouseLeave={stopScrolling}
           onClick={scrollLeft}
-          className={`absolute left-0 z-10 p-2 text-white transform bg-transparent cursor-pointer top-1/2 -translate-y-1/2 text-3xl transition-opacity duration-300 ease-in-out ${carouselButtons}`}
+          className={`absolute left-0 z-10 p-2 text-white transform bg-transparent cursor-pointer top-1/2 -translate-y-1/2 text-5xl transition-opacity duration-300 ease-in-out ${carouselButtons}`}
         >
-          &#10095;
+          <RiArrowLeftWideLine />
         </button>
         <div
           className="flex overflow-x-scroll gap-x-1 scroll-smooth scrollbar-hide"
@@ -115,9 +116,9 @@ const Carousel = ({ title, data, isHero, isFree }) => {
           onMouseEnter={startScrollingRight}
           onMouseLeave={stopScrolling}
           onClick={scrollRight}
-          className={`absolute right-0 z-10 p-2 text-white bg-transparent cursor-pointer top-1/2 -translate-y-1/2 text-3xl transition-opacity duration-300 ease-in-out ${carouselButtons}`}
+          className={`absolute right-0 z-10 p-2 text-white bg-transparent cursor-pointer top-1/2 -translate-y-1/2 text-5xl transition-opacity duration-300 ease-in-out ${carouselButtons}`}
         >
-          &#10094;
+          <RiArrowRightWideLine />
         </button>
       </div>
     </div>
