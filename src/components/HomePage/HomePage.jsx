@@ -1,7 +1,6 @@
 import Link from "next/link"
 import React from "react"
 import Carousel from "../Carousel/Carousel"
-import MovieCard from "../MovieCard/MovieCard"
 
 const HomePage = ({
   popularMoviesData,
@@ -12,42 +11,43 @@ const HomePage = ({
 }) => {
   const isFree = false
   return (
-    <main dir="rtl">
+    <main>
       <section className="home-section-bg h-72 md:h-5/6 p-5 flex flex-row items-center justify-between">
-        <div className="felx  flex-col justify-center w-60 md:w-96">
-          <h1 className="text-primary text-sm font-bold mb-4 md:text-4xl">
-            اعمال 1001 الاصلية
+        <div className="flex flex-col justify-center w-60 md:w-96">
+          <h1 className="text-primary text-sm font-inter font-bold mb-4 md:text-4xl">
+            1001 Original shows
           </h1>
           <Link href="/1001">
-            <button className="bg-primary px-2 py-2 rounded-xl text-sm text-white md:text-2xl">
-              تصفح الكل
+            <button className="bg-primary px-4 py-3 rounded-xl text-sm font-inter font-semibold text-white md:text-2xl">
+                Browse all
             </button>
           </Link>
         </div>
-        <div className=" w-64 md:w-8/12">
+        <div className="w-64 md:w-8/12">
           <Carousel isHero={true} data={popularMoviesData} />
         </div>
       </section>
-      <section className="bg-navy-900 ">
+      
+      <section className="bg-navy-900 pl-5">
         <div className="py-2">
-          <Carousel title="أضيف حديثاً" data={nowPlayingMoviesData} />
+          <Carousel title="Recently added" data={nowPlayingMoviesData} />
         </div>
         <div className="py-2">
-          <Carousel title="أفلام يجب مشاهدتها" data={topRatedMoviesData} />
+          <Carousel title="Movies you Must Watch" data={topRatedMoviesData} />
         </div>
         <div className="py-2">
-          <Carousel title="مسلسلات يجب مشاهدتها" data={topRatedTvShowsData} />
+          <Carousel title="Series You Must Watch" data={topRatedTvShowsData} />
         </div>
         <div className="py-2">
-          <Carousel title="الأكثر مشاهدة" data={trendingNowMoviesData} />
+          <Carousel title="Most Watched" data={trendingNowMoviesData} />
         </div>
         <div className="py-2">
-          <Carousel title="+OSN أفضل أعمال" data={topRatedMoviesData} />
+          <Carousel title="Best of OSN+" data={topRatedMoviesData} />
         </div>
         <div className="py-2">
           <Carousel
             isFree={true}
-            title="المشاهدة مجاناً"
+            title="Watch For Free"
             data={nowPlayingMoviesData}
           />
         </div>

@@ -18,14 +18,14 @@ const MovieCard = ({ movie, isFree }) => {
           src="/Premium.svg"
           width={14}
           height={14}
-          className="absolute top-[4px] right-1"
+          className="absolute top-[4px] left-2"
           alt="premium"
           draggable={false}
         />
       )}
       {isFree && (
-        <span className="absolute top-[4px] right-1 text-primary text-sm">
-          مجاناً
+        <span className="absolute top-[4px] left-2 text-primary font-inter text-sm">
+          Free
         </span>
       )}
     </div>
