@@ -25,7 +25,7 @@ const MobileNav = ({
           isScrolled ? "bg-navy-900/80" : "bg-navy-900 "
         }`}
       >
-        <div className="justify-self-end">
+        <div className="justify-self-start">
           <button onClick={toggleMenu}>
             <Image
               src="/burger-menu.svg"
@@ -40,7 +40,7 @@ const MobileNav = ({
             <Image src="/LogoGreen.svg" width={60} height={60} alt="Logo" />
           </Link>
         </div>
-        <div className="justify-self-start">
+        <div className="justify-self-end">
           {user ? (
             <Link href="/profile">
               <div className=" text-primary p-2 rounded-full bg-navy-600">
