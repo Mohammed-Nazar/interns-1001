@@ -6,11 +6,10 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-NavyN900 w-full px-6 md:px-12 py-12 text-NavyN70">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
-         
-          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
+        <div className="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
+          <div className="flex flex-col items-start text-left space-y-6">
             <img
-              src="/assets/1001_LOGO.svg"
+              src="/LogoGreen.svg"
               alt="1001.tv logo"
               className="w-20 h-auto"
             />
@@ -18,7 +17,7 @@ const Footer = () => {
               <p>+964 (780) 133-3323</p>
               <p>support@1001.tv</p>
             </div>
-            <div className="flex space-x-10 mt-4 text-2xl text-Green">
+            <div className="flex space-x-8 mt-4 text-2xl text-Green">
               <a
                 href="https://web.facebook.com/1001.stream/?_rdc=1&_rdr"
                 aria-label="Facebook"
@@ -54,10 +53,10 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-10 lg:gap-28 text-center md:text-left">
-            <div className="space-y-6">
+          <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-10 lg:gap-20 text-left">
+          <div className="space-y-4 font-inter">
               <h3 className="text-NavyN50 font-medium">Getting Started</h3>
-              <ul className="space-y-6 font-thin">
+              <ul className="space-y-4 font-light">
                 <li>
                   <Link href="en/how-it-works">How it works</Link>
                 </li>
@@ -69,9 +68,9 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4 font-inter">
               <h3 className="text-NavyN50 font-medium">Company</h3>
-              <ul className="space-y-6 font-thin">
+              <ul className="space-y-4 font-light">
                 <li>
                   <Link href="en/about-1001">About 1001</Link>
                 </li>
@@ -83,9 +82,9 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4 font-inter">
               <h3 className="text-NavyN50 font-medium">Support</h3>
-              <ul className="space-y-6 font-thin">
+              <ul className="space-y-4 font-light">
                 <li>
                   <Link href="en/faq">FAQ</Link>
                 </li>
@@ -102,9 +101,9 @@ const Footer = () => {
 
         <hr className="my-8 border-NavyN600" />
 
-        <div className="md:flex md:justify-between items-center text-center font-thin">
+        <div className="md:flex md:justify-between items-center text-center font-inter">
           <p>© 2022 - 1001 All rights reserved.</p>
-          <ul className="flex justify-center space-x-6">
+          <ul className="flex justify-center space-x-10">
             <li>
               <Link href="en/privacy-policy">Privacy Policy</Link>
             </li>
