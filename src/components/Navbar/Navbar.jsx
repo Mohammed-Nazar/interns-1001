@@ -32,30 +32,30 @@ const Navbar = () => {
 
   const items = [
     {
-      text: "الرئيسية",
+      text: "Home",
       link: "/",
     },
     {
-      text: "مسلسلات",
+      text: "Series",
       link: "/series",
     },
     {
-      text: "برامج",
+      text: "TV Shows",
       link: "/tv-shows",
     },
     {
-      text: "رياضة",
-      link: "/Sport",
+      text: "Sports",
+      link: "/sports",
     },
     {
-      text: "قائمة المشاهدات",
+      text: "My Watchlist",
       link: "/watching-list",
     },
   ];
 
   return (
     <>
-      <MobileNav  user={user}  items={items} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} isScrolled={isScrolled}  router={router} />
+      <MobileNav  user={user} items={items} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} isScrolled={isScrolled}  router={router} />
       <DesktopNav user={user} items={items} isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} isScrolled={isScrolled}  router={router} />
     </>
   );

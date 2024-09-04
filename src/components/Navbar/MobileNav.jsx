@@ -27,6 +27,26 @@ const MobileNav = ({
         }`}
       >
         <div className="justify-self-start">
+          {user ? (
+            <Link href="/profile">
+              <div className=" text-primary p-2 rounded-full bg-navy-600">
+                <FaUser />
+              </div>
+            </Link>
+          ) : (
+            <Link href="/login">
+              <div className="bg-primary px-4 py-2 rounded-xl text-navy-800 font-semibold">
+                Log in
+              </div>
+            </Link>
+          )}
+        </div>
+        <div>
+          <Link href="/">
+            <Image src="/LogoGreen.svg" width={60} height={60} alt="Logo" />
+          </Link>
+        </div>
+        <div className="justify-self-end">
           <button onClick={toggleMenu}>
             <Image
               src="/burger-menu.svg"
@@ -36,38 +56,15 @@ const MobileNav = ({
             />
           </button>
         </div>
-        <div>
-          <Link href="/">
-            <Image src="/LogoGreen.svg" width={60} height={60} alt="Logo" />
-          </Link>
-        </div>
-        <div className="justify-self-end">
-          {user ? (
-            <Link href="/profile">
-              <div className=" text-primary p-2 rounded-full bg-navy-600">
-                <FaUser />
-              </div>
-            </Link>
-          ) : (
-            <Link href="/login">
-              <div className="bg-primary px-4 py-2 rounded-xl text-navy-800 font-ar-500">
-                الدخول
-              </div>
-            </Link>
-          )}
-        </div>
       </nav>
 
       {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 h-full w-full bg-navy-900 z-50 transform transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex justify-between px-4 py-2">
-          <Link href="/">
-            <Image src="/LogoGreen.svg" width={60} height={60} alt="Logo" />
-          </Link>
+        <div className="flex justify-between p-4">
           <button onClick={toggleMenu}>
             <Image
               src="/close-icon.svg"
@@ -76,8 +73,11 @@ const MobileNav = ({
               alt="close-menu"
             />
           </button>
+          <Link href="/">
+            <Image src="/LogoGreen.svg" width={60} height={60} alt="Logo" />
+          </Link>
         </div>
-        <ul className="flex flex-col items-center text-white font-ar-500 text-lg gap-8 mt-10">
+        <ul className="flex flex-col items-start px-4 text-white font-inter text-lg gap-8 mt-10">
           {items.map((i) => (
             <li key={i.text}>
               <Link
@@ -94,9 +94,9 @@ const MobileNav = ({
           <li className="relative">
             <button
               onClick={toggleDropdown}
-              className="text-white flex items-center"
+              className="text-white w-full px-3 py-1 rounded-lg border border-navy-400 flex items-center"
             >
-              العربية
+              English
               <Image
                 src="/down_arrow.png"
                 width={10}
@@ -108,19 +108,19 @@ const MobileNav = ({
               />
             </button>
             <ul
-              className={`absolute top-full right-0 mt-2 bg-navy-900 text-white shadow-lg rounded-lg w-40 transition-all duration-300 ease-in-out transform ${
-                isDropdownOpen
-                  ? "opacity-100 translate-y-4"
-                  : "opacity-0 -translate-y-4 pointer-events-none"
-              }`}
-            >
-              <li className="px-4 py-2  cursor-pointer">
-                <a href="/ar">العربية</a>
-              </li>
-              <li className="px-4 py-2  cursor-pointer">
-                <a href="/en">English</a>
-              </li>
-            </ul>
+                className={`absolute top-full right-0 bg-navy-900 text-white shadow-lg border border-navy-400 rounded-lg w-28 transition-all duration-300 ease-in-out transform ${
+                  isDropdownOpen
+                    ? "opacity-100 translate-y-4"
+                    : "opacity-0 -translate-y-4 pointer-events-none"
+                }`}
+              >
+                <li className="px-4 py-2 cursor-pointer hover:bg-navy-800 rounded-t-lg border-b border-navy-700">
+                  <a href="/ar">العربية</a>
+                </li>
+                <li className="px-4 py-2 cursor-pointer hover:bg-navy-800 rounded-b-lg">
+                  <a href="/en">English</a>
+                </li>
+              </ul>
           </li>
         </ul>
       </div>
