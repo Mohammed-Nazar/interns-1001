@@ -1,83 +1,119 @@
 "use client"
-import Image from "next/image";
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa";
-
+import Link from "next/link"
+import { FaInstagram, FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa"
 
 const Footer = () => {
   return (
-    <footer id="footer" dir="rtl" className="bg-navy-900 px-20 py-14 ">
-      <div className="flex flex-col md:flex-row md:justify-between md:grid-cols-2 pb-5 mb-5 border-b-[2px] border-navy-800">
-        <div className="text-navy-70 flex flex-col gap-6 col-span-1 w-fit">
-          <Image src="/LogoGreen.svg" width={60} height={60} />
-          <div className="flex flex-col w-fit mb-2">
-            <span>support@1001.tv</span>
-            <span dir="ltr">+964(780)133-3323</span>
+    <>
+      <footer className="bg-NavyN900 w-full px-6 md:px-12 py-12 text-NavyN70">
+        <div className="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
+          <div className="flex flex-col items-start text-left space-y-6">
+            <img
+              src="/LogoGreen.svg"
+              alt="1001.tv logo"
+              className="w-20 h-auto"
+            />
+            <div>
+              <p>+964 (780) 133-3323</p>
+              <p>support@1001.tv</p>
+            </div>
+            <div className="flex space-x-8 mt-4 text-2xl text-Green">
+              <a
+                href="https://web.facebook.com/1001.stream/?_rdc=1&_rdr"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook className="cursor-pointer" />
+              </a>
+              <a
+                href="https://www.instagram.com/1001.stream/?hl=en"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="cursor-pointer" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@1001tvstream"
+                aria-label="Tiktok"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTiktok className="cursor-pointer" />
+              </a>
+              <a
+                href="https://www.youtube.com/@1001-TV"
+                aria-label="Youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutube className="cursor-pointer" />
+              </a>
+            </div>
           </div>
-          <ul className="flex gap-8 text-2xl text-primary">
-            <li className="cursor-pointer"><FaFacebook/></li>
-            <li className="cursor-pointer"><FaTiktok/></li>
-            <li className="cursor-pointer"><FaInstagram/></li>
-            <li className="cursor-pointer"><FaYoutube/></li>
+
+          <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-10 lg:gap-20 text-left">
+          <div className="space-y-4 font-inter">
+              <h3 className="text-NavyN50 font-medium">Getting Started</h3>
+              <ul className="space-y-4 font-light">
+                <li>
+                  <Link href="en/how-it-works">How it works</Link>
+                </li>
+                <li>
+                  <Link href="en/account">Account</Link>
+                </li>
+                <li>
+                  <Link href="en/redeem-voucher">Redeem Voucher</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4 font-inter">
+              <h3 className="text-NavyN50 font-medium">Company</h3>
+              <ul className="space-y-4 font-light">
+                <li>
+                  <Link href="en/about-1001">About 1001</Link>
+                </li>
+                <li>
+                  <Link href="en/career">Career</Link>
+                </li>
+                <li>
+                  <Link href="en/press">Press</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4 font-inter">
+              <h3 className="text-NavyN50 font-medium">Support</h3>
+              <ul className="space-y-4 font-light">
+                <li>
+                  <Link href="en/faq">FAQ</Link>
+                </li>
+                <li>
+                  <Link href="en/support-center">Support Center</Link>
+                </li>
+                <li>
+                  <Link href="en/contact-us">Contact us</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <hr className="my-8 border-NavyN600" />
+
+        <div className="md:flex md:justify-between items-center text-center font-inter">
+          <p>© 2022 - 1001 All rights reserved.</p>
+          <ul className="flex justify-center space-x-10">
+            <li>
+              <Link href="en/privacy-policy">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href="en/terms-condition">Terms Condition</Link>
+            </li>
           </ul>
         </div>
-        <div className="my-5 flex flex-col gap-2 md:flex-row md:gap-20">
-          <div>
-            <h4 className="font-ar-600 text-navy-50">بدء الاستخدام</h4>
-            <ul>
-              <li className="font-ar-400 text-navy-70 cursor-pointer my-3">
-                كيف يعمل 1001 ؟
-              </li>
-              <li className="font-ar-400 text-navy-70 cursor-pointer my-3">
-                الحساب
-              </li>
-              <li className="font-ar-400 text-navy-70 cursor-pointer my-3">
-                استرداد كوبون
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-ar-600 text-navy-50">الشركة</h4>
-            <ul>
-              <li className="font-ar-400 text-navy-70 cursor-pointer my-3">
-                من نحن ؟
-              </li>
-              <li className="font-ar-400 text-navy-70 cursor-pointer my-3">
-                الوظائف
-              </li>
-              <li className="font-ar-400 text-navy-70 cursor-pointer my-3">
-                الصحافة
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-ar-600 text-navy-50">الدعم</h4>
-            <ul>
-              <li className="font-ar-400 text-navy-70 cursor-pointer my-3">
-                الأسئلة الشائعة
-              </li>
-              <li className="font-ar-400 text-navy-70 cursor-pointer my-3">
-                مركز الدعم
-              </li>
-              <li className="font-ar-400 text-navy-70 cursor-pointer my-3">
-                اتصل بنا
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col md:flex-row justify-between gap-4 text-navy-100 font-ar-400 ">
-        <div>
-          <span>© 2022 - 1001 جميع الحقوق محفوظة</span>
-        </div>
-        <div className="flex gap-8">
-          <span className="cursor-pointer">سياسة الخصوصية</span>
-          <span className="cursor-pointer">شروط الاستخدام</span>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   )
 }
 

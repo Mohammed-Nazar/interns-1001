@@ -21,11 +21,25 @@ const MobileNav = ({
   return (
     <>
       <nav
-        dir="rtl"
         className={`grid grid-cols-3 w-full sticky z-50 bg-navy-900 px-4 py-2 top-0 left-0 right-0 place-items-center md:hidden ${
           isScrolled ? "bg-navy-900/80" : "bg-navy-900 "
         }`}
       >
+        <div className="justify-self-end">
+          <button onClick={toggleMenu}>
+            <Image
+              src="/burger-menu.svg"
+              width={30}
+              height={20}
+              alt="burger-menu"
+            />
+          </button>
+        </div>
+        <div>
+          <Link href="/">
+            <Image src="/LogoGreen.svg" width={60} height={60} alt="Logo" />
+          </Link>
+        </div>
         <div className="justify-self-start">
           {user ? (
             <Link href="/profile">
@@ -40,21 +54,6 @@ const MobileNav = ({
               </div>
             </Link>
           )}
-        </div>
-        <div>
-          <Link href="/">
-            <Image src="/LogoGreen.svg" width={60} height={60} alt="Logo" />
-          </Link>
-        </div>
-        <div className="justify-self-end">
-          <button onClick={toggleMenu}>
-            <Image
-              src="/burger-menu.svg"
-              width={30}
-              height={20}
-              alt="burger-menu"
-            />
-          </button>
         </div>
       </nav>
 
@@ -108,19 +107,19 @@ const MobileNav = ({
               />
             </button>
             <ul
-                className={`absolute top-full right-0 bg-navy-900 text-white shadow-lg border border-navy-400 rounded-lg w-28 transition-all duration-300 ease-in-out transform ${
-                  isDropdownOpen
-                    ? "opacity-100 translate-y-4"
-                    : "opacity-0 -translate-y-4 pointer-events-none"
-                }`}
-              >
-                <li className="px-4 py-2 cursor-pointer hover:bg-navy-800 rounded-t-lg border-b border-navy-700">
-                  <a href="/ar">العربية</a>
-                </li>
-                <li className="px-4 py-2 cursor-pointer hover:bg-navy-800 rounded-b-lg">
-                  <a href="/en">English</a>
-                </li>
-              </ul>
+              className={`absolute top-full right-0 bg-navy-900 text-white shadow-lg border border-navy-400 rounded-lg w-28 transition-all duration-300 ease-in-out transform ${
+                isDropdownOpen
+                  ? "opacity-100 translate-y-4"
+                  : "opacity-0 -translate-y-4 pointer-events-none"
+              }`}
+            >
+              <li className="px-4 py-2 cursor-pointer hover:bg-navy-800 rounded-t-lg border-b border-navy-700">
+                <a href="/ar">العربية</a>
+              </li>
+              <li className="px-4 py-2 cursor-pointer hover:bg-navy-800 rounded-b-lg">
+                <a href="/en">English</a>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
