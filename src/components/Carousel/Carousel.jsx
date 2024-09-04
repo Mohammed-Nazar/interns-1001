@@ -79,7 +79,7 @@ const Carousel = ({ title, data, isHero, isFree }) => {
     >
       {!isHero && (
         <div className="flex justify-between items-center mx-4">
-          <h1 className="text-white mb-6 text-lg font-ar-600 w-fit md:text-3xl">
+          <h1 className="text-white mb-4 text-lg font-inter font-semibold w-fit md:text-2xl">
             {title}
           </h1>
         </div>
