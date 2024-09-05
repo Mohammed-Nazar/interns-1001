@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react"
 import Image from "next/image"
+import SubscriptionAgreementNotice from "../subscription agreement notice/SubscriptionAgreementNotice"
 const ContentRedeemVoucher = ({
   button,
   content,
@@ -8,7 +9,7 @@ const ContentRedeemVoucher = ({
   getVoucherCode,
   redeemVoucher,
   showError,
-  setVoucherCode
+  setVoucherCode,
 }) => {
   const [isFocused, setIsFocused] = useState(false)
 
@@ -34,13 +35,13 @@ const ContentRedeemVoucher = ({
           />
         </div>
 
-        <h1 className="font-ar-600 text-3xl mt-2">{content.title}</h1>
+        <h1 className="font-inter text-3xl mt-2">{content.title}</h1>
       </div>
       <div className="my-6">
-        <ul className="font-ar-400">
+        <ul className="font-inter">
           {content.perks.map((i, index) => (
             <li key={index} className="relative my-4 flex items-center">
-              <span className="bg-primary inline-flex items-center p-2 rounded-full ml-2">
+              <span className="bg-primary inline-flex items-center p-2 rounded-full mr-2">
                 <Image
                   draggable={false}
                   src="/correct-signal.svg"
@@ -49,15 +50,15 @@ const ContentRedeemVoucher = ({
                   alt="Correct Signal w-5 h-5"
                 />
               </span>
-              <span className="text-xl">{i.text}</span>
+              <span className="font-inter text-xl">{i.text}</span>
             </li>
           ))}
         </ul>
       </div>
       <div>
         <div className="w-full">
-          <h2 className="font-semibold text-xl font-ar-500">
-            ادخل رمز الكوبون
+          <h2 className="font-semibold text-xl font-inter">
+            Enter voucher code
           </h2>
           <div
             className={`my-1 flex items-center border-[1px] rounded-2xl px-2 bg-navy-600 transition duration-200 ease-linear ${
@@ -106,7 +107,12 @@ const ContentRedeemVoucher = ({
               </svg>
             </div>
           </div>
-          {showError && <p className="text-red-500 font-ar-500 my-2 font-sm">عفوًا ! يبدو أن رمز الكوبون غير صحيح. يُرجى التحقق مرة أخرى والمحاولة.</p>}
+          {showError && (
+            <p className="text-red-500 font-inter my-2 font-sm">
+              Oops! This voucher code seems incorrect. Please double-check and
+              try again.
+            </p>
+          )}
           <div>
             <button
               disabled={button}
@@ -114,26 +120,12 @@ const ContentRedeemVoucher = ({
               type="button"
               className="w-full h-[56px] disabled:bg-navy-600 disabled:text-navy-400 p-6 flex items-center justify-center rounded-2xl text-base font-semibold bg-primary hover:bg-primary/90 "
             >
-              <div className="flex gap-1">استمر ️</div>
+              <div className="flex gap-1">Continue</div>
             </button>
           </div>
         </div>
         <div className="my-3">
-          <p className="text-navy-70 text-xs">
-            باسترداد الكوبون، أنت توافق على
-            <a href={content.links.privacyPolicy} className="text-primary">
-              &nbsp;سياسة الخصوصية&nbsp;
-            </a>
-            و
-            <a href={content.links.termsAndConditions} className="text-primary">
-              &nbsp;شروط خدمة&nbsp;
-            </a>
-            الخاصة بـ1001. إذا كنت بحاجة إلى أي مساعدة في استرداد الكوبون، يُرجى
-            <a href={content.links.support} className="text-primary">
-              &nbsp;الاتصال بفريق الدعم&nbsp;
-            </a>
-            الخاص بنا.
-          </p>
+          <SubscriptionAgreementNotice />
         </div>
       </div>
     </section>
