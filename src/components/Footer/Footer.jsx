@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook, FaYoutube, FaTiktok } from "react-icons/fa"
 const Footer = () => {
   return (
     <>
-      <footer className="bg-NavyN900 w-full px-6 md:px-12 py-12 text-NavyN70">
+      <footer id="footer" className="bg-NavyN900 w-full px-6 md:px-12 py-12 text-NavyN70">
         <div className="flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
           <div className="flex flex-col items-start text-left space-y-6">
             <img
