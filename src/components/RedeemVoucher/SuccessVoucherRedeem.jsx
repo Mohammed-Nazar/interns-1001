@@ -25,35 +25,34 @@ const SuccessVoucherRedeem = () => {
           />
         </div>
 
-        <h1 className="font-ar-600 text-3xl my-10">
-          تهانينا ! ومرحباً بك في البريميوم 👑
+        <h1 className="font-inter text-3xl my-10">
+          Congratulations! 🎊 <br /> Welcome to 1001 TV Premium 👑{" "}
         </h1>
       </div>
       <div className="my-6">
-        <p className="font-ar-400 text-xl">
-          تمت عملية دفع الكوبون. استمتع الآن بعالم غير محدود من محتوانا الحصري
-          والخالي من الإعلانات. اكتشف عالمًا من الأفلام والمسلسلات عالية الجودة
-          في أينما كنت.
+        <p className="font-inter text-xl">
+          Your payment is successful. Enjoy unlimited access to our exclusive,
+          ad-free Premium content. Discover a world of top-quality movies and
+          series at your fingertips. Happy streaming!
         </p>
       </div>
       <div>
         <div className="w-full">
           <h2 className="font-semibold text-2xl font-ar-500 my-8">
-            استمتع بالمشاهدة!
+            Start Watching
           </h2>
 
           <div>
-          <Link href="/">
-            <button
-              type="button"
-              className="w-full mt-14 h-[56px] disabled:bg-navy-600 disabled:text-navy-400 p-6 flex items-center justify-center rounded-2xl text-base font-semibold bg-primary hover:bg-primary/90 "
-            >
-              <div className="flex gap-1">استكشف الآن ️</div>
-            </button>
+            <Link href="/">
+              <button
+                type="button"
+                className="w-full mt-14 h-[56px] disabled:bg-navy-600 disabled:text-navy-400 p-6 flex items-center justify-center rounded-2xl text-base font-semibold bg-primary hover:bg-primary/90 "
+              >
+                <div className="flex gap-1">Start Watching</div>
+              </button>
             </Link>
           </div>
         </div>
-        
       </div>
     </section>
   )
