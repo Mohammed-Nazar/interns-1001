@@ -12,16 +12,16 @@ const RedeemVoucher = () => {
   const { user } = useContext(UserContext)
   const [voucherCode, setVoucherCode] = useState("")
   const [button, setButton] = useState(true)
-  const [isVouccherRedeemed, setIsVoucherRedeemed] = useState(false)
+  const [isVoucherRedeemed, setIsVoucherRedeemed] = useState(false)
   const [showError, setShowError] = useState(false)
 
   const content = {
     title:
-      "استرد كوبونك و اكتشف عالمًا لا نهائيًا من الترفيه مع 1001 Premium TV",
+      "Redeem your voucher and explore an endless world of entertainment with 1001 TV Premium",
     perks: [
-      { text: "بدون إعلانات ، بدون إنقطاع." },
-      { text: "اكتشف المحتوى قبل الكل ، كن أول من يشاهد." },
-      { text: "استمتع بأروع عروض 1001 الحصرية." },
+      { text: "Zero Ads, Zero Interruptions." },
+      { text: "Get Early Access, Be the First to Watch." },
+      { text: "Dive into 1001's Exclusive Premium Content." },
     ],
     links: {
       privacyPolicy: "/privacy-policy",
@@ -77,7 +77,6 @@ const RedeemVoucher = () => {
     <>
       {!user && <LoginModal />}
       <main
-        dir="rtl"
         className={`py-10 grid grid-cols-1 md:grid-cols-2 md:pt-16 bg-subscription-gradient bg-cover object-cover min-h-screen ${!user ? "blur-sm pointer-events-none" : ""}`}
       >
         <section className="md:order-last relative  mt-10 md:mt-5 z-0">
@@ -90,7 +89,7 @@ const RedeemVoucher = () => {
             className="w-10/12 md:w-full  md:absolute left-28 z-0"
           />
         </section>
-        {isVouccherRedeemed ? (
+        {isVoucherRedeemed ? (
           <SuccessVoucherRedeem />
         ) : (
           <ContentRedeemVoucher
