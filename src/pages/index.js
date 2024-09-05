@@ -6,6 +6,7 @@ import {
   topRatedTvShows,
   trendingNowMovies,
 } from "@/API/mainApi"
+import SubscriptionLandingPage from "@/components/home/SubscriptionLandingPage"
 
 export async function getStaticProps() {
   const popularMoviesData = await popularMovies()
@@ -34,12 +35,14 @@ export default function Home({
   trendingNowMoviesData,
 }) {
   return (
-    <HomePage
+    <SubscriptionLandingPage/>
+    
+  )
+}
+ {/*<HomePage
       popularMoviesData={popularMoviesData}
       nowPlayingMoviesData={nowPlayingMoviesData}
       topRatedMoviesData={topRatedMoviesData}
       topRatedTvShowsData={topRatedTvShowsData}
       trendingNowMoviesData={trendingNowMoviesData}
-    />
-  )
-}
+    />*/}
