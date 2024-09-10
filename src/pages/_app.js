@@ -8,7 +8,9 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <UserProvider>
         <Navbar />
-        <Component {...pageProps} />
+        <div className="bg-image bg-cover bg-center">
+        <Component {...pageProps}/>
+        </div>
         <Footer />
       </UserProvider>
     </>
