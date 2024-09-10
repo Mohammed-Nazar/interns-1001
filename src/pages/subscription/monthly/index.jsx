@@ -26,7 +26,7 @@ const index = () => {
               <span className="text-NavyN500 text-sm ml-2"> • (7.99/Mo)</span>
             </p>
           </div>
-          <Link href="/subscription/homepage" className="text-Green text-lg font-semibold">
+          <Link href="/subscription" className="text-Green text-lg font-semibold">
             Change
           </Link>
         </div>
