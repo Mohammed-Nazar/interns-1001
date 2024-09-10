@@ -1,6 +1,6 @@
 import React from "react"
 import { FaCircleCheck } from "react-icons/fa6"
-import SubscriptionForm from "./SubscriptionForm"
+import SubscriptionForm from "@/components/subscriptionForm/SubscriptionForm"
 
 const SubscriptionLandingPage = () => {
   return (
