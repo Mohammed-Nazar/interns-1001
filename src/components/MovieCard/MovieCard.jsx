@@ -6,7 +6,7 @@ const MovieCard = ({ movie, isFree }) => {
 
   return (
     <>
-      <Link href={isFree ? `/movie/${movie.id}` : "/subscription/homepage"}>
+      <Link href={isFree ? `/movie/${movie.id}` : "/subscription"}>
         <div className="relative w-fit">
           <Image
             src={src + movie.poster_path}
