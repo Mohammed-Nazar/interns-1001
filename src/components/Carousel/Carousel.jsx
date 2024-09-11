@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 import MovieCard from "../MovieCard/MovieCard"
-import { RiArrowRightWideLine,RiArrowLeftWideLine } from "react-icons/ri";
+import { RiArrowRightWideLine, RiArrowLeftWideLine } from "react-icons/ri"
 
 const Carousel = ({ title, data, isHero, isFree }) => {
   const carouselRef = useRef(null)
@@ -103,7 +103,7 @@ const Carousel = ({ title, data, isHero, isFree }) => {
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
         >
-          {data.results.map((movie, index) => (
+          {data.map((movie, index) => (
             <MovieCard
               key={index}
               movie={movie}

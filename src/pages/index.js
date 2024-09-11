@@ -1,45 +1,17 @@
 import HomePage from "@/components/HomePage/HomePage"
-import {
-  nowPlayingMovies,
-  popularMovies,
-  topRatedMovies,
-  topRatedTvShows,
-  trendingNowMovies,
-} from "@/API/mainApi"
+import { getMediaContent } from "@/API/mainApi"
 
 export async function getStaticProps() {
-  const popularMoviesData = await popularMovies()
-  const nowPlayingMoviesData = await nowPlayingMovies()
-  const topRatedMoviesData = await topRatedMovies()
-  const topRatedTvShowsData = await topRatedTvShows()
-  const trendingNowMoviesData = await trendingNowMovies()
+  const mediaContent = await getMediaContent()
 
   return {
     props: {
-      popularMoviesData,
-      nowPlayingMoviesData,
-      topRatedMoviesData,
-      topRatedTvShowsData,
-      trendingNowMoviesData,
+      mediaContent,
     },
     revalidate: 3600,
   }
 }
 
-export default function Home({
-  popularMoviesData,
-  nowPlayingMoviesData,
-  topRatedMoviesData,
-  topRatedTvShowsData,
-  trendingNowMoviesData,
-}) {
-  return (
-    <HomePage
-      popularMoviesData={popularMoviesData}
-      nowPlayingMoviesData={nowPlayingMoviesData}
-      topRatedMoviesData={topRatedMoviesData}
-      topRatedTvShowsData={topRatedTvShowsData}
-      trendingNowMoviesData={trendingNowMoviesData}
-    />
-  )
+export default function Home({ mediaContent }) {
+  return <HomePage mediaContent={mediaContent} />
 }
