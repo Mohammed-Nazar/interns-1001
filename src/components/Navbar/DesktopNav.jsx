@@ -13,7 +13,7 @@ const DesktopNav = ({
 }) => {
   return (
     <nav
-      className={`hidden md:flex px-12 py-5 sticky z-50 top-0 transition-colors duration-300 flex-row justify-between items-center ${
+      className={`hidden md:flex px-12 py-5 w-full fixed z-50 top-0 transition-colors duration-300 flex-row justify-between items-center ${
         isScrolled ? "bg-navy-900/80" : "bg-navy-900"
       }`}
     >
