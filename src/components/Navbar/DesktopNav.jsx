@@ -13,16 +13,16 @@ const DesktopNav = ({
 }) => {
   return (
     <nav
-      className={`hidden md:flex px-12 py-5 sticky z-50 top-0 transition-colors duration-300 flex-row justify-between items-center ${
+      className={`hidden md:flex px-4 lg:px-12 py-5 w-full fixed z-50 top-0 transition-colors duration-300 flex-row justify-between items-center ${
         isScrolled ? "bg-navy-900/80" : "bg-navy-900"
       }`}
     >
       <div className="flex justify-between items-center w-full">
-      <div className="flex gap-2 md:gap-5 lg:gap-10 items-center mr-2">
+      <div className="flex gap-5 items-center mr-2">
           <Link href="/">
             <img src="/LogoGreen.svg" className="w-20 h-auto"/>
           </Link>
-          <ul className="text-white font-inter sm:text-lg md:text-xl lg:text-2xl flex gap-2 md:gap-5 lg:gap-10">
+          <ul className="text-white w-full font-inter sm:text-sm md:text-lg lg:text-2xl flex gap-2 md:gap-4 lg:gap-7 items-center flex-nowrap">
             {items.map((i) => (
               <li key={i.text}>
                 <Link
