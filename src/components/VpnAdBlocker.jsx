@@ -1,8 +1,19 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from "next/image"
+import { useState } from "react"
+import { useRouter } from "next/router"
 
 const VpnAdBlocker = () => {
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
+
+  const handleHomeClick = () => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      router.push("/")
+    }, 5000)
+  }
+
   return (
     <main className="bg-main backdrop-blur-xl object-cover h-screen flex justify-center items-center relative">
       <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
@@ -24,18 +35,21 @@ const VpnAdBlocker = () => {
           correctly. Thanks for your understanding!
         </p>
         <div className="my-4 flex gap-x-2">
-          <button className="px-6 py-2 border-[2px] border-primary rounded-xl text-primary inter-600">
-            Refresh
+          <button
+            onClick={handleHomeClick}
+            className="bg-primary px-6 py-2 rounded-xl font-light text-navy-800 inter-600"
+            disabled={loading}
+          >
+            {loading ? (
+              <div className="animate-spin inline-block w-4 h-4 border-2 rounded-full border-t-navy-800 border-r-transparent border-b-navy-800 border-l-transparent"></div>
+            ) : (
+              "Home"
+            )}
           </button>
-          <Link href="/">
-            <button className="bg-primary px-6 py-2 rounded-xl font-light text-navy-800 inter-600">
-              Home
-            </button>
-          </Link>
         </div>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default VpnAdBlocker;
+export default VpnAdBlocker
