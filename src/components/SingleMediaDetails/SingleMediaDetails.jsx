@@ -1,11 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
-import React from "react"
+import React, { useContext } from "react"
+import { UserContext } from "../Context/UserContext"
 
 const SingleMediaDetails = ({ media }) => {
+  const { user, setUser } = useContext(UserContext)
+
   return (
     <main>
-      <section className="relative">
+      <section className="relative pt-10">
         <div
           className="hidden md:block  h-[85vh] bg-no-repeat bg-cover bg-center"
           style={{ backgroundImage: `url(${media.bannerImage})` }}
@@ -21,17 +24,18 @@ const SingleMediaDetails = ({ media }) => {
               <div className="flex flex-col">
                 <h2 className="flex items-center gap-x-4 text-white text-5xl py-2 font-ar-300 ">
                   {media.name}
-                  {media.required_package > 0 && (
-                    <span className="flex items-center gap-x-4">
-                      |
-                      <Image
-                        src="/Premium.svg"
-                        width={30}
-                        height={30}
-                        alt="Premium"
-                      />
-                    </span>
-                  )}
+                  {media.required_package > 0 &&
+                    (user ? user.required_package == 0 : true) && (
+                      <span className="flex items-center gap-x-4">
+                        |
+                        <Image
+                          src="/Premium.svg"
+                          width={30}
+                          height={30}
+                          alt="Premium"
+                        />
+                      </span>
+                    )}
                 </h2>
               </div>
               <div className="flex gap-2  text-2xl my-1">
@@ -56,7 +60,8 @@ const SingleMediaDetails = ({ media }) => {
                       className="p-3 flex items-center justify-center rounded-2xl text-base font-semibold bg-primary hover:bg-primary/90"
                     >
                       <div className="flex gap-1">
-                        {media.required_package > 0
+                        {media.required_package > 0 &&
+                        (user ? user.required_package == 0 : true)
                           ? "Subscribe Now"
                           : "Watch Now"}
                       </div>

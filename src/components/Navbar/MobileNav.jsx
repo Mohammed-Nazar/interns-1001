@@ -11,11 +11,21 @@ const MobileNav = ({
   toggleDropdown,
   isDropdownOpen,
   user,
+  setUser,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  const toggleUserDropdown = () => {
+    setIsUserDropdownOpen((prev) => !prev)
+  }
+
+  const handleLogout = () => {
+    setUser()
   }
 
   return (
@@ -40,19 +50,32 @@ const MobileNav = ({
             <Image src="/LogoGreen.svg" width={60} height={60} alt="Logo" />
           </Link>
         </div>
-        <div className="justify-self-end">
+        <div className="justify-self-end relative">
           {user ? (
-            <Link href="/profile">
-              <div className=" text-primary p-2 rounded-full bg-navy-600">
-                <FaUser />
-              </div>
-            </Link>
+            <div
+              className="text-primary p-2 rounded-full bg-navy-600 cursor-pointer"
+              onClick={toggleUserDropdown}
+            >
+              <FaUser />
+            </div>
           ) : (
             <Link href="/login">
               <div className="bg-primary px-4 py-2 rounded-xl text-navy-800 font-semibold">
                 Log in
               </div>
             </Link>
+          )}
+
+          {/* User Dropdown */}
+          {user && isUserDropdownOpen && (
+            <ul className="absolute -right-2 top-10 bg-navy-900 text-white shadow-lg rounded-lg w-28 transition-all duration-300 ease-in-out">
+              <li
+                className="px-4 py-2 cursor-pointer hover:bg-navy-800 rounded-lg"
+                onClick={handleLogout}
+              >
+                Logout
+              </li>
+            </ul>
           )}
         </div>
       </nav>

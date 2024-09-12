@@ -77,23 +77,23 @@ const RedeemVoucher = () => {
     <>
       {!user && <LoginModal />}
       <main
-        className={`py-10 grid grid-cols-1 md:grid-cols-2 md:pt-16 bg-subscription-gradient bg-cover object-cover min-h-screen ${!user ? "blur-sm pointer-events-none" : ""}`}
+        className={`py-1 grid grid-cols-1 md:grid-cols-2 md:pt-16 bg-subscription-gradient bg-cover object-cover min-h-screen ${!user ? "blur-sm pointer-events-none" : ""}`}
       >
-        <section className="md:order-last relative  mt-10 md:mt-5 z-0">
+        <section className="md:order-last relative  mt-10 md:mt-5 z-0 pt-24">
           <Image
             draggable={false}
             src="/Voucher-Presentation.svg"
             alt="Voucher Presentation"
             width={100}
             height={100}
-            className="w-10/12 md:w-full  md:absolute left-28 z-0"
+            className="w-10/12 md:w-11/12 ml-20 md:ml-0  md:absolute md:left-15 z-0 "
           />
         </section>
         {isVoucherRedeemed ? (
           <SuccessVoucherRedeem />
         ) : (
           <ContentRedeemVoucher
-          setVoucherCode={setVoucherCode}
+            setVoucherCode={setVoucherCode}
             showError={showError}
             button={button}
             content={content}

@@ -5,7 +5,7 @@ import SubscriptionForm from "./SubscriptionForm"
 const SubscriptionLandingPage = () => {
   return (
     <>
-      <div className="flex flex-col items-start md:items-center w-full md:w-538px min-h-screen px-6 py-12 mx-auto">
+      <div className="pt-28 flex flex-col items-start md:items-center w-full md:w-538px min-h-screen px-6 py-12 mx-auto">
         <div className="mb-4">
           <div className="flex flex-col items-start mb-8">
             <div className="flex flex-col items-center mb-2">
@@ -36,12 +36,12 @@ const SubscriptionLandingPage = () => {
               First to Watch.
             </p>
             <p className="flex items-center gap-2 md:leading-10">
-              <FaCircleCheck className="text-Green" />Dive into 1001's
-              Exclusive Premium Content.
+              <FaCircleCheck className="text-Green" />
+              Dive into 1001's Exclusive Premium Content.
             </p>
           </div>
         </div>
-        <SubscriptionForm/>
+        <SubscriptionForm />
       </div>
     </>
   )

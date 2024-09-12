@@ -5,7 +5,7 @@ import React from "react"
 
 const index = () => {
   return (
-    <div className="bg-image bg-cover bg-center">
+    <div className="pt-24 bg-image bg-cover bg-center">
       <div className="flex flex-col items-start md:items-center w-full md:w-538px min-h-screen px-6 py-12 mx-auto">
         <div className="mx-0 md:mx-9 text-white mb-9">
           <h3 className="font-medium text-lg leading-9 tracking-wide">

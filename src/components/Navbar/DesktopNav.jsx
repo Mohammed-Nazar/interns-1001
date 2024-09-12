@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { FaUser } from "react-icons/fa"
@@ -10,7 +10,18 @@ const DesktopNav = ({
   toggleDropdown,
   isDropdownOpen,
   user,
+  setUser,
 }) => {
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false)
+
+  const toggleUserDropdown = () => {
+    setUserDropdownOpen((prev) => !prev)
+  }
+
+  const handleLogout = () => {
+    setUser()
+  }
+
   return (
     <nav
       className={`hidden md:flex px-4 lg:px-12 py-5 w-full fixed z-50 top-0 transition-colors duration-300 flex-row justify-between items-center ${
@@ -18,9 +29,9 @@ const DesktopNav = ({
       }`}
     >
       <div className="flex justify-between items-center w-full">
-      <div className="flex gap-5 items-center mr-2">
+        <div className="flex gap-5 items-center mr-2">
           <Link href="/">
-            <img src="/LogoGreen.svg" className="w-20 h-auto"/>
+            <img src="/LogoGreen.svg" className="w-20 h-auto" />
           </Link>
           <ul className="text-white w-full font-inter sm:text-sm md:text-lg lg:text-2xl flex gap-2 md:gap-4 lg:gap-7 items-center flex-nowrap">
             {items.map((i) => (
@@ -79,9 +90,12 @@ const DesktopNav = ({
                 </li>
               </ul>
             </li>
-            <li>
+            <li className="relative">
               {user ? (
-                <div className="text-primary p-2 rounded-full bg-navy-600 text-2xl">
+                <div
+                  className="text-primary p-2 rounded-full bg-navy-600 text-2xl cursor-pointer"
+                  onClick={toggleUserDropdown}
+                >
                   <FaUser />
                 </div>
               ) : (
@@ -90,6 +104,17 @@ const DesktopNav = ({
                     Log in
                   </button>
                 </Link>
+              )}
+
+              {user && userDropdownOpen && (
+                <ul className="absolute top-full right-0 mt-2 bg-navy-900 text-white shadow-lg rounded-lg w-24 transition-all duration-300 ease-in-out transform opacity-100">
+                  <li
+                    className="px-4 py-2 cursor-pointer hover:bg-navy-800 rounded-lg"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </li>
+                </ul>
               )}
             </li>
           </ul>
