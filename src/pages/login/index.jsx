@@ -7,7 +7,7 @@ const Index = () => {
 
   return (
     <div className="flex justify-center bg-login backdrop-blur-lg p-2">
-      <div className="px-6 py-8 sm:px-10 md:px-16 rounded-2xl shadow-lg w-full max-w-md border border-gray-500">
+      <div className="bg-black/70 backdrop-blur-lg px-6 py-8 sm:px-10 md:px-16 rounded-2xl shadow-lg w-full max-w-md border border-gray-500">
         <h2 className="font-inter text-white text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">
           Login
         </h2>
