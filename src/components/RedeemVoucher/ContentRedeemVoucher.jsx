@@ -14,7 +14,7 @@ const ContentRedeemVoucher = ({
   const [isFocused, setIsFocused] = useState(false)
 
   return (
-    <section className="mx-4 md:mr-10 mt-16 w-10/12 md:mt-0 md:w-8/12 text-white">
+    <section className="pt-16 mx-4 md:mr-10 mt-16 w-10/12 md:mt-0 md:w-8/12 text-white">
       <div id="subscription-title">
         <div className="flex flex-col items-center w-fit">
           <Image

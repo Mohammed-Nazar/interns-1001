@@ -37,7 +37,7 @@ const HomePage = ({ mediaContent }) => {
   return (
     <main>
       {/* Hero section */}
-      <section className="home-section-bg h-72 md:h-5/6 px-5 flex flex-row items-center justify-between pt-24 pb-10">
+      <section className="home-section-bg h-72 md:h-5/6 px-5 flex flex-row items-center justify-between pt-10 md:pt-24 pb-10">
         <div className="flex flex-col justify-center w-60 md:w-96">
           <h1 className="text-primary text-sm font-inter font-bold mb-4 md:text-4xl">
             1001 Original shows
