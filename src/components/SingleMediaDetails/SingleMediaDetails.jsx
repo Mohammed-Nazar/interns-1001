@@ -54,7 +54,14 @@ const SingleMediaDetails = ({ media }) => {
               </div>
               <div className="mt-2 flex items-center gap-2">
                 <div>
-                  <Link href="/subscription">
+                  <Link
+                    href={
+                      media.required_package > 0 &&
+                      (user ? user.required_package == 0 : true)
+                        ? "/subscription"
+                        : "/"
+                    }
+                  >
                     <button
                       type="button"
                       className="p-3 flex items-center justify-center rounded-2xl text-base font-semibold bg-primary hover:bg-primary/90"
