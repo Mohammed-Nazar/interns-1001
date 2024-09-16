@@ -43,12 +43,12 @@ const HomePage = ({ mediaContent }) => {
             1001 Original shows
           </h1>
           <Link href="/1001">
-            <button className="bg-primary px-4 py-3 rounded-xl text-sm font-inter font-semibold text-white md:text-2xl">
+            <button className="bg-primary px-1 md:px-4 py-3 rounded-xl text-sm font-inter font-semibold text-white md:text-2xl">
               Browse all
             </button>
           </Link>
         </div>
-        <div className="w-64 md:w-8/12">
+        <div className="w-56 md:w-8/12">
           <Carousel
             isHero={true}
             data={mediaContent.filter(
