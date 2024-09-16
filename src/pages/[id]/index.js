@@ -58,7 +58,6 @@ const Index = ({ mediaContent }) => {
 
   const uniqueMedia = mediaContent.filter((item) => item.id == id)
   const media = uniqueMedia[0]
-  console.log(media)
 
   if (!media) {
     return (
