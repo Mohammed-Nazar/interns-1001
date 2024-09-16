@@ -8,7 +8,7 @@ const SingleMediaDetails = ({ media }) => {
 
   return (
     <main>
-      <section className="relative pt-10">
+      <section className="relative pt-0 md:pt-10">
         <div
           className="hidden md:block  h-[85vh] bg-no-repeat bg-cover bg-center"
           style={{ backgroundImage: `url(${media.bannerImage})` }}
